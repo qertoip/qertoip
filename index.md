@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/qertoip/qertoip/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+I am a programmer and [cypherpunk](https://www.activism.net/cypherpunk/manifesto.html). I fell in love with programming in 1995, with [Bitcoin](https://bitcoin.org/) in 2011, and most recently with [Monero](https://getmonero.org/) in 2017.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I prefer to reason from first principles. I tend to see through the bullshit and manage technical trade-offs well. Here is my [github](https://github.com/qertoip), [twitter](https://twitter.com/qertoip), [reddit](https://reddit.com/u/qertoip), and [medium](https://medium.com/@qertoip).
 
-### Markdown
+### Contact
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[Signal](https://signal.org/) me at +48 694 797 487. Note this number is for Signal only and no other communication (like GSM calls/SMS) will be received.
 
-```markdown
-Syntax highlighted code block
+E-mail is inherently insecure means of communication but if you still feel like it, reach me at [contact@qertoip.com](mailto:contact@qertoip.com). 
 
-# Header 1
-## Header 2
-### Header 3
+Here is [my PGP public key](https://keybase.io/qertoip/pgp_keys.asc?fingerprint=40d292c2f04416800d70297cb4b418c7ec7939ac). Ensure the fingerprint is `40D2 92C2 F044 1680 0D70 297C B4B4 18C7 EC79 39AC` and add it to your keyring.
 
-- Bulleted
-- List
+### Background
 
-1. Numbered
-2. List
+* Computer science graduate from Warsaw University of Technology, EiTI.
+* Former programmer at European Organization for Nuclear Research.
+* Co-founder and 8-years a CTO at successful European fintech startup (large scale scraping of online banking systems across the globe); retired from the position in Feb 2019.
+* Open source programmer in the Bitcoin ecosystem.
 
-**Bold** and _Italic_ and `Code` text
+### Disclosure
 
-[Link](url) and ![Image](src)
-```
+I believe privacy and free speech are a basic human rights.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/qertoip/qertoip/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+I do research and encourage the use of a variety of anonymity and privacy enhancing technologies, including but not limited to overlay networks like Tor and VPN-s; anonymity enabling operating systems like Whonix, Tails and Qubes OS; financial privacy respecting cryptocurrencies like Monero; privacy techniques like coin-joining and mixing; private secure messangers like Signal; and decentralized cryptocurrency exchanges like Bisq.
