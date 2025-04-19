@@ -1,187 +1,137 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-[#0f1021] text-[#f5f5f5]">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SINGLE – Qertoip AI Picks</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
-  <style type="text/tailwindcss">
-    @theme {
-      --color-clifford: #da373d;
-      --color-gamma: #b5cfff;
-    }
-  </style>
-  <style>
-    body {
-      font-family: 'Literata', serif;
-      font-weight: 300;
-    }
-    .underline-custom {
-      background-image: linear-gradient(to right, rgb(137, 180, 250), rgb(137, 180, 250));
-      background-repeat: no-repeat;
-      background-size: 100% 2px;
-      background-position: 0 100%;
-    }
-    .sans { font-family: Verdana, Geneva, Tahoma, sans-serif; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Theme - About</title>
+    <!-- Using Tailwind Play CDN for demonstration - replace with your build setup -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link Fira Code font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            html {
+                background-color: theme('colors.terminal-bg');
+                color: theme('colors.terminal-fg');
+                font-family: theme('fontFamily.mono');
+                /* Add slightly more line-height for readability like the original */
+                line-height: 1.6;
+            }
+            /* Style for highlighted text elements */
+            .highlight {
+                color: theme('colors.terminal-accent');
+                /* The original doesn't seem bold, just colored */
+            }
+            /* Links inherit highlight color for consistency here */
+            a {
+                 color: theme('colors.terminal-accent');
+            }
+             a:hover {
+                 /* Add subtle underline or effect if desired */
+                 text-decoration: underline;
+             }
+        }
+    </style>
+    <script>
+        // Tailwind CSS v4 Configuration (inline for CDN)
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'terminal-bg': '#1a170f',
+                'terminal-fg': '#eceae5',
+                'terminal-accent': '#eec35e',
+              },
+              fontFamily: {
+                // Define the font stack
+                'mono': ['Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'monospace'],
+              }
+            }
+          }
+        }
+    </script>
 </head>
-<body class="px-8 py-12 flex flex-col items-center text-[1.5rem]">
-  <header class="mb-20 text-center w-full max-w-7xl">
-    <h1 class="text-[164px] font-light underline-custom">ONE</h1>
-    <h2 class="text-[3rem] font-light block mt-6 text-[#f5f5f5]">Qertoip Top AI Picks</h2>
-    <p class="mt-6 text-[1.3rem] text-[#cfcfcf] max-w-5xl mx-auto">
-      I'm spending my days testing models against <span class="text-[var(--color-gamma)] font-semibold">real-world</span> tasks</span>.
-    </p>
-  </header>
+<body class="font-mono max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-  <main class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-[90rem]">
-    <div class="space-y-8">
-      <div class="p-8 bg-[#1a1b2c] rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold text-[var(--color-gamma)] tracking-wider pb-4 underline-custom">LLM</h3>
-        <p class="text-3xl font-light mt-4">Gemini 2.5 Pro Experimental</p>
-        <p class="text-sm text-[#8f8f8f] sans mt-1">updated: 2025-03-28</p>
-        <div class="mt-8 space-x-4 text-base text-right">
-          <a href="https://kagi.com/" target="_blank" rel="noopener noreferrer" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">
-            Use
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 w-3 align-baseline stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-          <button onclick="toggle('llm-why')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Why?</button>
-          <button onclick="toggle('llm-second')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Second best?</button>
+    <!-- Header Section -->
+    <header class="flex justify-between items-center mb-6">
+        <div class="flex items-center">
+            <!-- Site Title -->
+            <span class="bg-terminal-accent text-terminal-bg px-3 py-1 font-bold text-lg">Terminal</span>
+            <!-- Decorative bars - adjust count/spacing as needed, hide on smaller screens -->
+            <span class="text-terminal-accent ml-4 hidden sm:inline tracking-widest text-lg">||||||||||||||||||||||||||||||||||||||||||||||||||</span>
         </div>
-        <p id="llm-why" class="mt-2 hidden text-lg toggleable-info">Because it offers advanced reasoning close to GPT-4 but with faster iteration and integration into Google ecosystem.</p>
-        <p id="llm-second" class="mt-2 hidden text-lg toggleable-info">Sonnet 3.7 Extended Thinking</p>
-      </div>
-
-      <div class="p-8 bg-[#1a1b2c] rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold text-[#b5cfff] tracking-wider  pb-4 underline-custom">AI &nbsp;IDE</h3>
-        <p class="text-3xl font-light mt-4">Windsurf Editor</p>
-        <p class="text-sm text-[#8f8f8f] sans mt-1">updated: 2025-03-28</p>
-        <div class="mt-8 space-x-4 text-sm text-right">
-          <a href="https://kagi.com/" target="_blank" rel="noopener noreferrer" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Use <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 w-3 align-baseline stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg></a>
-          <button onclick="toggle('ide-why')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Why?</button>
-          <button onclick="toggle('ide-second')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Second best?</button>
+        <!-- Language Switcher -->
+        <div class="border border-terminal-accent px-2 py-1 text-terminal-accent text-sm cursor-pointer">
+            English <span class="ml-1">▼</span>
         </div>
-        <p id="ide-why" class="mt-2 hidden text-lg toggleable-info">Strong AI-first IDE, competitive with Cursor, but with less bloat and better command inference.</p>
-        <p id="ide-second" class="mt-2 hidden text-lg toggleable-info">Cursor: Feature-rich, slightly more established, but can feel heavier.</p>
-      </div>
+    </header>
 
-      <div class="p-8 bg-[#1a1b2c] rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold text-[#b5cfff] tracking-wider  pb-4 underline-custom">AI CLI</h3>
-        <p class="text-3xl font-light mt-4">Aider</p>
-        <p class="text-sm text-[#8f8f8f] sans mt-1">updated: 2025-03-28</p>
-        <div class="mt-8 space-x-4 text-sm text-right">
-          <a href="https://kagi.com/" target="_blank" rel="noopener noreferrer" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Use <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 w-3 align-baseline stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg></a>
-          <button onclick="toggle('cli-why')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Why?</button>
-          <button onclick="toggle('cli-second')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Second best?</button>
-        </div>
-        <p id="cli-why" class="mt-2 hidden text-lg toggleable-info">Well-structured Git-aware workflow with rapid GPT integration, but still behind shell-based agents in versatility.</p>
-        <p id="cli-second" class="mt-2 hidden text-lg toggleable-info">Shell Agents (e.g., Open Interpreter): More flexible for complex tasks, steeper learning curve.</p>
-      </div>
+    <!-- Navigation Section -->
+    <nav class="mb-12">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-lg">
+            <li><a href="#" class="text-terminal-accent hover:underline">About</a></li>
+            <li><a href="#" class="text-terminal-accent hover:underline">Showcase</a></li>
+            <li><a href="#" class="text-terminal-accent hover:underline">Show more <span class="ml-1 text-xs relative top-[-1px]">▼</span></a></li>
+            <!-- Add more nav items if needed -->
+        </ul>
+    </nav>
 
-      <div class="p-8 bg-[#1a1b2c] rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold text-[#b5cfff] tracking-wider  pb-4 underline-custom">Computer Use Agent</h3>
-        <p class="text-3xl font-light mt-4">They all suck</p>
-        <p class="text-sm text-[#8f8f8f] sans mt-1">updated: 2025-03-28</p>
-        <div class="mt-8 space-x-4 text-sm text-right">
-          <a href="https://kagi.com/" target="_blank" rel="noopener noreferrer" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Use <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 w-3 align-baseline stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg></a>
-          <button onclick="toggle('agent-why')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Why?</button>
-          <button onclick="toggle('agent-second')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Second best?</button>
-        </div>
-        <p id="agent-why" class="mt-2 hidden text-lg toggleable-info">Current agents lack reliability and intuitive control for seamless everyday computer operation.</p>
-        <p id="agent-second" class="mt-2 hidden text-lg toggleable-info">Rabbit R1 (Conceptually): Promising but unproven hardware-first approach.</p>
-      </div>
-    </div>
+    <!-- Main Content Section -->
+    <main>
+        <article>
+            <!-- Page Title -->
+            <h1 class="text-2xl font-bold text-terminal-accent mb-1">About</h1>
+            <!-- Dotted Separator -->
+            <div class="text-terminal-accent overflow-hidden whitespace-nowrap mb-4 text-xs tracking-[0.2em]">
+                ........................................................................................................................................................................................................
+            </div>
+            <!-- Meta Data -->
+            <p class="text-sm opacity-75 mb-8">2019-01-25 :: Radek</p>
 
-    <div class="space-y-8">
-      <div class="p-8 bg-[#1a1b2c] rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold text-[#b5cfff] tracking-wider  pb-4 underline-custom">Image Generator</h3>
-        <p class="text-3xl font-light mt-4">GPT 4o</p>
-        <p class="text-sm text-[#8f8f8f] sans mt-1">updated: 2025-03-28</p>
-        <div class="mt-8 space-x-4 text-sm text-right">
-          <a href="https://kagi.com/" target="_blank" rel="noopener noreferrer" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Use <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 w-3 align-baseline stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg></a>
-          <button onclick="toggle('imgen-why')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Why?</button>
-          <button onclick="toggle('imgen-second')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Second best?</button>
-        </div>
-        <p id="imgen-why" class="mt-2 hidden text-lg toggleable-info">Surprisingly strong on structure and coherence, but still behind Midjourney in aesthetics.</p>
-        <p id="imgen-second" class="mt-2 hidden text-lg toggleable-info">Midjourney v7: Unmatched aesthetics and artistic control, less flexible prompting.</p>
-      </div>
+            <!-- Content Heading -->
+            <h2 class="text-xl font-bold my-6">Hi there</h2>
 
-      <div class="p-8 bg-[#1a1b2c] rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold text-[#b5cfff] tracking-wider  pb-4 underline-custom">Voice Generator</h3>
-        <p class="text-3xl font-light mt-4">ElevenLabs Multilingual v2</p>
-        <p class="text-sm text-[#8f8f8f] sans mt-1">updated: 2025-03-28</p>
-        <div class="mt-8 space-x-4 text-sm text-right">
-          <a href="https://kagi.com/" target="_blank" rel="noopener noreferrer" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Use <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 w-3 align-baseline stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg></a>
-          <button onclick="toggle('voice-why')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Why?</button>
-          <button onclick="toggle('voice-second')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Second best?</button>
-        </div>
-        <p id="voice-why" class="mt-2 hidden text-lg toggleable-info">Excellent clarity and emotional expression, narrowly edged out by OpenAI's new Whisper variant.</p>
-        <p id="voice-second" class="mt-2 hidden text-lg toggleable-info">OpenAI Voice Engine: Slightly more natural prosody, less accessible currently.</p>
-      </div>
+            <!-- Content Paragraphs -->
+            <p class="mb-4">
+                My name is Radek and I'm the author of this theme. I made it to help you present
+                your ideas easier.
+            </p>
+            <p class="mb-4">
+                We all know how hard is to start something on the web, especially these days. You
+                need to prepare a bunch of stuff, configure them and when that's done – create
+                the content.
+            </p>
+            <p class="mb-4">
+                This theme is pretty basic and covers all of the essentials. All you have to do
+                is start typing!
+            </p>
 
-      <div class="p-8 bg-[#1a1b2c] rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold text-[#b5cfff] tracking-wider  pb-4 underline-custom">Video Generator</h3>
-        <p class="text-3xl font-light mt-4">Veo-2</p>
-        <p class="text-sm text-[#8f8f8f] sans mt-1">updated: 2025-03-28</p>
-        <div class="mt-8 space-x-4 text-sm text-right">
-          <a href="https://kagi.com/" target="_blank" rel="noopener noreferrer" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Use <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 w-3 align-baseline stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg></a>
-          <button onclick="toggle('video-why')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Why?</button>
-          <button onclick="toggle('video-second')" class="text-base cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-2 decoration-[#89b4fa]">Second best?</button>
-        </div>
-        <p id="video-why" class="mt-2 hidden text-lg toggleable-info">Best in open-access category. Slightly behind Sora in cinematic consistency and realism.</p>
-        <p id="video-second" class="mt-2 hidden text-lg toggleable-info">Sora 2: Leading cinematic quality and realism, limited access.</p>
-      </div>
-    </div>
+            <!-- Features Section -->
+            <p class="mt-8 mb-4">The theme includes:</p>
+            <ul class="list-none pl-6">
+                <li class="mb-2">- fully customizable color schemes generated by <span class="highlight">Terminal.css</span>.</li>
+                <li class="mb-2">- <span class="highlight">Fira Code</span> as default monospaced font. It's gorgeous!</li>
+                <li class="mb-2">- really nice duotone, custom syntax highlighting based on <span class="highlight">Chroma</span> (fast, built-in Hugo syntax highlighter)</li>
+                <li class="mb-2">- fully responsive</li>
+                <li class="mb-2">- fully based on Hugo ecosystem (Pipes and Modules)</li>
+            </ul>
 
-  </main>
+            <!-- Concluding Paragraph -->
+            <p class="mt-8">So, there you have it... enjoy!</p>
+        </article>
+    </main>
 
-  <footer class="mt-16 border-t border-[#2a2b3c] pt-6 text-center text-base text-[#8f8f8f] space-x-6 sans mt-1">
-    <a href="#" class="hover:underline"><i class="fab fa-twitter mr-1"></i>Twitter</a>
-    <a href="#" class="hover:underline"><i class="fab fa-linkedin mr-1"></i>LinkedIn</a>
-    <a href="#" class="hover:underline"><i class="fab fa-github mr-1"></i>GitHub</a>
-    <a href="mailto:someone@example.com" class="hover:underline"><i class="fas fa-envelope mr-1"></i>Email</a>
-  </footer>
+    <!-- Footer Section -->
+    <footer class="mt-16 pt-8 text-center text-sm opacity-75">
+        © 2025 Powered by <a href="#" class="highlight hover:underline">Hugo</a> :: <a href="#" class="highlight hover:underline">Theme</a> made by <a href="#" class="highlight hover:underline">panr</a>
+    </footer>
 
-  <script>
-    function toggle(id) {
-      const el = document.getElementById(id);
-      const isHidden = el.classList.contains('hidden');
-
-      // Hide all toggleable elements first
-      const allToggleable = document.querySelectorAll('.toggleable-info');
-      allToggleable.forEach(p => {
-        p.classList.add('hidden');
-      });
-
-      // If the clicked element was hidden, show it
-      if (isHidden) {
-        el.classList.remove('hidden');
-      }
-      // If it was already visible, the loop above already hid it.
-    }
-  </script>
-
-
-    <!--
-    rgb(137, 180, 250)
-    text-base cursor-pointer underline underline-offset-6
-    pink
-    rgb(245, 189, 230)
-    //-->
-  </body>
+</body>
 </html>
