@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piotr Włodarek - Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            html {
+                font-size: 24px;
+
+                background-color: theme('colors.terminal-bg');
+                color: theme('colors.terminal-fg');
+                font-family: theme('fontFamily.mono');
+                /* Add slightly more line-height for readability like the original */
+                line-height: 1.6;
+            }
+            .highlight {
+                color: theme('colors.terminal-accent');
+            }
+            /* Links inherit highlight color for consistency here */
+            a {
+                 color: theme('colors.terminal-accent');
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    </style>
+    <script>
+        // Tailwind CSS v4 Configuration (inline for CDN)
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'terminal-bg': '#1a170f',
+                'terminal-fg': '#eceae5',
+                'terminal-accent': '#eec35e',
+              },
+              fontFamily: {
+                // Define the font stack
+                'mono': ['Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'monospace'],
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="font-mono max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Header Section -->
+    <header class="flex justify-between items-center mb-6">
+        <div class="flex items-center">
+            <!-- Site Title -->
+            <span class="bg-terminal-accent text-terminal-bg px-3 py-1 font-bold text-lg">qertoip.com</span>
+            <!-- Decorative bars - adjust count/spacing as needed, hide on smaller screens -->
+            <span class="text-terminal-accent ml-4 hidden sm:inline tracking-widest text-lg">|||||||||||||||||||||||||||||||||||||||||||||||||||||</span>
+        </div>
+        <!-- Language Switcher -->
+        <!-- <div class="border border-terminal-accent px-2 py-1 text-terminal-accent text-sm cursor-pointer">
+            English <span class="ml-1">▼</span>
+        </div> -->
+    </header>
+
+    <!-- Navigation Section -->
+    <nav class="mb-12">
+        <!-- <ul class="flex flex-wrap gap-x-6 gap-y-2 text-lg">
+            <li><a href="#" class="text-terminal-accent hover:underline">About</a></li>
+            <li><a href="#" class="text-terminal-accent hover:underline">Showcase</a></li>
+            <li><a href="#" class="text-terminal-accent hover:underline">Show more <span class="ml-1 text-xs relative top-[-1px]">▼</span></a></li>
+        </ul> -->
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <article>
+            <!-- Page Title -->
+            <h1 class="text-2xl font-bold text-terminal-accent mb-1">Piotr Włodarek</h1>
+            <!-- Dotted Separator -->
+            <div class="text-terminal-accent overflow-hidden whitespace-nowrap mb-4 text-xs tracking-[0.2em]">
+                ........................................................................................................................................................................................................
+            </div>
+            <!-- Meta Data -->
+            <!-- <p class="text-sm opacity-75 mb-8">2019-01-25 :: Radek</p> -->
+
+            <p class="mb-4">
+                I'm programmer specializing in machine learning and AI engineering.
+            </p>
+            <p class="mb-4">
+                I strive to reason from first principles. I see through the bullshit and manage technical trade-offs well. Here is my linkedin, github, twitter, reddit, and medium.
+            </p>
+
+            <h2 class="text-xl font-bold my-6">Contact</h2>
+
+            <p class="mb-4">
+                Tel or Signal me at <a href="tel:+48694797487" class="text-terminal-accent hover:underline">+48 694 797 487</a>
+            </p>
+            <p class="mb-4">
+                E-mail: <a href="mailto:contact@qertoip.com" class="text-terminal-accent hover:underline">contact@qertoip.com</a>
+            </p>
+
+            <h2 class="text-xl font-bold my-6">Background</h2>
+
+            <ul class="space-y-4 list-disc pl-8">
+                <li class="px-2">Computer science graduate from Warsaw University of Technology, EiTI.<br />Thesis on application of <span class="text-terminal-accent">machine learning</span> to real estate valuation.</li>
+                <li class="px-2">Former Python programmer at CERN, European Organization for Nuclear Research.</li>
+                <li class="px-2">Co-founder and 8-years a <span class="text-terminal-accent">CTO</span> at successful European fintech startup Kontomatik (large scale web scraping, regression and classification machine learning for the lending market). Retired from the position in Feb 2019.</li>
+            </ul>
+        </article>
+    </main>
+
+</body>
+</html>

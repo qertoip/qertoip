@@ -1,6 +1,6 @@
 export const config = {
-  server: "_site",
-  files: ["_site/**/*"],
+  server: "public",
+  files: ["public/**/*"],
 };
 
 export default function(eleventyConfig) {
@@ -13,4 +13,14 @@ export default function(eleventyConfig) {
 
     port: 8080,
 	});
+
+  // Add the dir configuration here
+  eleventyConfig.addPassthroughCopy("src/assets");
+
+  return {
+    dir: {
+      input: "src",
+      output: "public"
+    }
+  };
 };
